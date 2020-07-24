@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
 
 type Meta = {
   name: string
@@ -50,6 +50,9 @@ const SEO: React.FC<Props> = ({
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={[
+        { rel:"stylesheet", href: "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" }
+      ]}
       meta={[
         {
           name: `description`,
@@ -85,6 +88,7 @@ const SEO: React.FC<Props> = ({
         },
       ].concat(meta)}
     />
+
   )
 }
 
